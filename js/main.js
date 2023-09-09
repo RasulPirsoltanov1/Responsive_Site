@@ -3,8 +3,13 @@ let menuChecker = true;
 let searchBarChecker = true;
 
 
-const openMenu = () => {
 
+
+const openMenu = () => {
+    let searchbar = document.querySelector(".searchbar");
+    searchbar.classList.remove("active");
+    if (!searchBarChecker)
+        searchBarChecker = !searchBarChecker;
     let menu = document.querySelector(".navbar");
     if (menuChecker && searchBarChecker) {
         menuChecker = !menuChecker;
@@ -20,11 +25,12 @@ const openMenu = () => {
 }
 
 
+
+
 const openSearch = () => {
     let menu1 = document.querySelector(".navbar");
-    console.log(window.screen.width)
-    if(window.screen.width>1100){
-        menuChecker=true;
+    if (window.screen.width > 1100) {
+        menuChecker = true;
         menu1.classList.remove("active");
     }
     let menu = document.querySelector(".searchbar");
